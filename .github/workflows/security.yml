@@ -19,8 +19,8 @@ jobs:
       uses: sonarsource/sonarcloud-github-action@master
       with:
         args: >
-          -Dsonar.projectKey=tu_proyecto
-          -Dsonar.organization=tu_org
+          -Dsonar.projectKey=api-pui
+          -Dsonar.organization=gutimoody-byte
           -Dsonar.host.url=https://sonarcloud.io
           -Dsonar.login=${{ secrets.SONAR_TOKEN }}
 
@@ -37,6 +37,6 @@ jobs:
     - name: DAST - OWASP ZAP Baseline Scan
       uses: zaproxy/action-baseline@v0.6.0
       with:
-        target: "https://tu-api-publicada.com"
+        target: "https://www.fnhermes.com.mx/pui/api/pui/login"
         rules: "zap-rules.tsv"
         cmd_options: "-a"
