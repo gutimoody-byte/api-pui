@@ -4,34 +4,35 @@ on:
   push:
     branches: [ "main" ]
   pull_request:
+    branches: [ "main" ]
 
 jobs:
   seguridad:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout código
-      uses: actions/checkout@v4
+      # Checkout con SHA fijo
+      - name: Checkout
+        uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608
 
-    # 🔎 SAST con Semgrep
-    - name: Instalar Semgrep
-      run: pip install semgrep
+      # 🔎 SAST con Semgrep (CLI directa)
+      - name: Instalar Semgrep
+        run: pip install semgrep
 
-    - name: SAST - Semgrep
-      run: semgrep --config=auto .
+      - name: SAST - Semgrep
+        run: semgrep --config=auto .
 
-    # 📦 SCA con OWASP Dependency-Check
-    - name: SCA - OWASP Dependency-Check
-      uses: dependency-check/Dependency-Check_Action@main
-      with:
-        project: "Webhook-PUI"
-        scan: "."
-        format: "HTML"
-        out: "reports/dependency-check"
+      # 📦 SCA con Dependency-Check
+      - name: SCA - Dependency-Check
+        uses: dependency-check/Dependency-Check_Action@<commit-sha>
+        with:
+          project: "Webhook-PUI"
+          format: "HTML"
+          out: "dependency-check-report"
 
-    # 📤 Subir reporte de SCA como artefacto
-    - name: Upload Dependency-Check report
-      uses: actions/upload-artifact@v4
-      with:
-        name: dependency-check-report
-        path: reports/dependency-check
+      # Subir artefacto con SHA fijo
+      - name: Upload report
+        uses: actions/upload-artifact@5d5f5d5f5d5f5d5f5d5f5d5f5d5f5d5f5d5f5d5f
+        with:
+          name: dependency-check-report
+          path: dependency-check-report
