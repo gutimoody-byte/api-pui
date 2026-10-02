@@ -15,7 +15,7 @@ jobs:
 
     # 🔎 SAST con Semgrep
     - name: SAST - Semgrep
-      uses: returntocorp/semgrep-action@v1.36.0
+      uses: returntocorp/semgrep-action@v1
       with:
         config: "auto"
 
