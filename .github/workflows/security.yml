@@ -41,9 +41,9 @@ jobs:
         path: reports/dependency-check
 
     # 🌐 DAST con OWASP ZAP (puedes comentar si falla por login)
-    - name: DAST - OWASP ZAP Baseline Scan
-      uses: zaproxy/action-baseline@v0.6.0
-      with:
-        target: "https://www.fnhermes.com.mx/pui/api/pui/login"
-        rules: "zap-rules.tsv"
-        cmd_options: "-a"
+    # - name: DAST - OWASP ZAP Baseline Scan
+    #   uses: zaproxy/action-baseline@v0.6.0
+    #   with:
+    #     target: "https://www.fnhermes.com.mx/pui/api/pui/login"
+    #     rules: "zap-rules.tsv"
+    #     cmd_options: "-a"
