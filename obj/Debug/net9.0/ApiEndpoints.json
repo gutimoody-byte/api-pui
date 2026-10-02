@@ -1,0 +1,107 @@
+[
+  {
+    "ContainingType": "PuiWebhookApi.Controllers.PuiWebhookController",
+    "Method": "ObtenerTokenAsync",
+    "RelativePath": "api/pui",
+    "HttpMethod": "",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.String",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "PuiWebhookApi.Controllers.PuiWebhookController",
+    "Method": "ActivarReporte",
+    "RelativePath": "api/pui/activar-reporte",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "solicitud",
+        "Type": "PuiWebhookApi.Controllers.ActivarReporteRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PuiWebhookApi.Controllers.PuiWebhookController",
+    "Method": "ActivarReportePrueba",
+    "RelativePath": "api/pui/activar-reporte-prueba",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "solicitud",
+        "Type": "PuiWebhookApi.Controllers.ActivarReporteRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PuiWebhookApi.Controllers.PuiWebhookController",
+    "Method": "DesactivarReporte",
+    "RelativePath": "api/pui/desactivar-reporte",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "PuiWebhookApi.Controllers.DesactivarReporteRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PuiWebhookApi.Controllers.PuiWebhookController",
+    "Method": "Login",
+    "RelativePath": "api/pui/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "PuiWebhookApi.Controllers.LoginRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PuiWebhookApi.Controllers.WeatherForecastController",
+    "Method": "Get",
+    "RelativePath": "WeatherForecast",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[PuiWebhookApi.WeatherForecast, PuiWebhookApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ],
+    "EndpointName": "GetWeatherForecast"
+  }
+]

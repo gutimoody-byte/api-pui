@@ -1,0 +1,6 @@
+@PuiWebhookApi_HostAddress = http://localhost:5195
+
+GET {{PuiWebhookApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

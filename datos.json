@@ -1,0 +1,12 @@
+{
+  "mensaje": "Coincidencia encontrada por CURP",
+  "folio": "e7b5a4c2-9f4e-4a99-91a2-6d4a8a1eaf3d-550e8400-e29b-41d4-a716-446655440001",
+  "coincidencia_encontrada": true,
+  "datos_localizados": {
+    "curp": "EAGM561123MPLSZY06",
+    "nombre": "MARIA MAYOLA",
+    "apellido_paterno": "ESCAREnO",
+    "apellido_materno": "GUZMAN",
+    "fecha_nacimiento": "1956-11-23"
+  }
+}
