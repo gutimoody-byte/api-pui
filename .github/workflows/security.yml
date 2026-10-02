@@ -33,7 +33,14 @@ jobs:
         format: "HTML"
         out: "reports/dependency-check"
 
-    # 🌐 DAST con OWASP ZAP
+    # 📤 Subir reporte de SCA como artefacto
+    - name: Upload Dependency-Check report
+      uses: actions/upload-artifact@v3
+      with:
+        name: dependency-check-report
+        path: reports/dependency-check
+
+    # 🌐 DAST con OWASP ZAP (puedes comentar si falla por login)
     - name: DAST - OWASP ZAP Baseline Scan
       uses: zaproxy/action-baseline@v0.6.0
       with:
