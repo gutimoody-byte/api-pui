@@ -42,6 +42,23 @@ builder.Services.AddHostedService<CoincidenciaWorker>();
 builder.Services.AddHttpClient<PuiAuthService>();
 
 var app = builder.Build();
+
+// Middleware para cabeceras de seguridad
+app.Use(async (context, next) =>
+{
+    // Anti-Clickjacking
+    context.Response.Headers.Add("X-Frame-Options", "DENY");
+
+    // Content Security Policy (ejemplo básico)
+    context.Response.Headers.Add("Content-Security-Policy", "default-src 'self'; script-src 'self'; style-src 'self'");
+
+    // Otras cabeceras recomendadas
+    context.Response.Headers.Add("X-Content-Type-Options", "nosniff");
+    context.Response.Headers.Add("Referrer-Policy", "no-referrer");
+
+    await next();
+});
+
 app.UseAuthentication();
 app.UseAuthorization();
 
