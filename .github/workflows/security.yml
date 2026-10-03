@@ -40,12 +40,12 @@ jobs:
     - name: DAST - OWASP ZAP Baseline
       uses: zaproxy/action-baseline@v0.9.0
       with:
-        target: "https://www.fnhermes.com.mx/pui/api/pui/login"   # aquí va la URL de tu API/webhook en ejecución
-        # rules_file_name: ".zap/rules.tsv"
+        target: "https://www.fnhermes.com.mx/pui/api/pui/login"
         cmd_options: "-a"
 
+    # 📤 Subir reporte de ZAP como artefacto
     - name: Upload ZAP Report
       uses: actions/upload-artifact@v4
       with:
         name: zap-report
-        path: owasp-zap-report.html
+        path: report_html.html
