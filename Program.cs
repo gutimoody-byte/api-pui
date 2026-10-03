@@ -46,6 +46,9 @@ var app = builder.Build();
 // Middleware para cabeceras de seguridad
 app.Use(async (context, next) =>
 {
+
+    context.Response.Headers.Add("Content-Security-Policy", "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; frame-ancestors 'none'; form-action 'self'");
+
     // Anti-Clickjacking
     context.Response.Headers.Add("X-Frame-Options", "DENY");
 
