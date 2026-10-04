@@ -43,7 +43,7 @@ jobs:
         target: "https://www.fnhermes.com.mx/pui/api/pui/login"
         cmd_options: "-a"
 
-    # 📤 Subir reporte de ZAP como artefacto "GitHub..."
+    # 📤 Subir reporte de ZAP como artefacto "GitHub......"
     - name: Upload ZAP Report
       if: always()
       uses: actions/upload-artifact@v4
